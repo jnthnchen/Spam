@@ -26,7 +26,7 @@ def preprocess(text):
     r = [lemmatizer.lemmatize(word) for word in r]
     return ' '.join(r)
 
-st.title("📧 Spam Classifier (Logistic Regression)")
+st.title("Spam Classifier (Logistic Regression)")
 
 user_input = st.text_area("Enter a message to classify:")
 
@@ -36,6 +36,6 @@ if st.button("Predict"):
     prediction = model.predict(vectorized)[0]
 
     if prediction == 1:
-        st.error("🚨 This looks like SPAM")
+        st.error("This looks like SPAM")
     else:
-        st.success("✅ This looks NOT SPAM")
+        st.success("This looks NOT SPAM")
